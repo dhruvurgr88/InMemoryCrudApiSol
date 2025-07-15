@@ -15,6 +15,8 @@ namespace InMemoryCrudApi
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+            var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+            app.Run($"http://0.0.0.0:{port}");
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -22,6 +24,7 @@ namespace InMemoryCrudApi
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            
 
             app.UseHttpsRedirection();
 

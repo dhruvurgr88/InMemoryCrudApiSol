@@ -1,0 +1,9 @@
+﻿services:
+  - type: web
+    name: in-memory-crud-api
+    runtime: node
+    repo: https://github.com/YOUR_USERNAME/YOUR_REPO_NAME
+    branch: main
+    buildCommand: dotnet publish -c Release -o out
+    startCommand: dotnet out/InMemoryCrudApi.dll
+   
